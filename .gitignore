@@ -1,0 +1,22 @@
+# Entorno virtual
+.venv/
+
+# Variables de entorno
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Índice vectorial
+vectorstore/
+
+# Logs
+logs/
+
+# Sistema
+.DS_Store
+Thumbs.db
