@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pegasus Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <h1>🪽 Pegasus Assistant</h1>
+
+            <p>Asistente interno de Santo Pegasus Soluciones</p>
+
+        </header>
+
+        <div id="chat" class="chat">
+
+            {% for mensaje in chat %}
+
+                <div class="user">
+
+                    <strong>👤 Tú</strong>
+
+                    <p>{{ mensaje.pregunta }}</p>
+
+                </div>
+
+                <div class="assistant">
+
+                    <strong>🪽 Pegasus</strong>
+
+                    <div class="answer">
+
+                        {{ mensaje.respuesta | replace('\n', '<br>') | safe }}
+
+                    </div>
+
+                    {% if mensaje.fuentes %}
+
+                        <div class="sources">
+
+                            <b>Fuentes consultadas</b>
+
+                            <ul>
+
+                                {% for fuente in mensaje.fuentes %}
+
+                                    <li>
+
+                                        📄 {{ fuente.archivo }}
+
+                                        (Página {{ fuente.pagina }})
+
+                                    </li>
+
+                                {% endfor %}
+
+                            </ul>
+
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+        <form method="POST" id="questionForm">
+
+            <input
+                id="pregunta"
+                name="pregunta"
+                type="text"
+                placeholder="Escribe tu consulta y presiona Enter..."
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit">
+
+                Preguntar
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+
+</html>

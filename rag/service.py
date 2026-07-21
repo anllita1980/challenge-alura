@@ -23,7 +23,7 @@ class RAGService:
 
         documents = self.retriever.search(question)
         
-        print("\n========== DEBUG RETRIEVER ==========")
+        '''print("\n========== DEBUG RETRIEVER ==========")
         print(f"Pregunta: {question}")
         print(f"Documentos encontrados: {len(documents)}")
 
@@ -32,7 +32,7 @@ class RAGService:
             print(f"Fuente: {doc.metadata.get('source')}")
             print(f"Página: {doc.metadata.get('page')}")
             print(doc.page_content[:300])
-        print("====================================\n")
+        print("====================================\n")'''
         
         if not documents:
 
