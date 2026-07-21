@@ -128,8 +128,8 @@ Crea un archivo `.env` en la raíz del proyecto con:
 
 ```env
 GEMINI_API_KEY=tu_clave_de_gemini
-CHAT_MODEL=gemini-2.0-flash
-EMBEDDING_MODEL=gemini-embedding-001
+CHAT_MODEL=models/gemini-3.5-flash
+EMBEDDING_MODEL=models/gemini-embedding-001
 ```
 
 ## ▶️ Ejecución
