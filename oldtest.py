@@ -1,4 +1,4 @@
-from rag.indexer import RAGIndexer
+'''from rag.indexer import RAGIndexer
 from services import AssistantService
 
 
@@ -68,4 +68,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main()'''
